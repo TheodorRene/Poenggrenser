@@ -11,15 +11,17 @@ function App() {
     </div>
   );
 }
+//const URL ="https://poengrenser.theodorc.no"
+const URL ="http://localhost:5000"
 
 const FuzzySearch = () => {
     const [query, setQuery] = useState("")
-    const [data, setData] = useState([["Søk etter ønsket studie"]])
+    const [data, setData] = useState([])
     const [hasMounted, setHasMounted] = useState(false)
 
     useEffect( () => {
         if(hasMounted) {
-            fetch(`https://poenggrenser.theodorc.no/search?q=${query}`)
+            fetch(`${URL}/search?q=${query}`)
                 .then(res => res.json())
                 .then(res => setData(res.data))
                 .catch((e) => console.log(e))
@@ -28,7 +30,8 @@ const FuzzySearch = () => {
             setHasMounted(true)
         }
 
-    },[query, hasMounted])
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[query])
 
     const handleChange = (e: { target: { value: React.SetStateAction<string>; }; }) => {
        setQuery(e.target.value)
@@ -38,11 +41,12 @@ const FuzzySearch = () => {
       <div>
       <input type="text" value={query} onChange={handleChange}/>
       <div>
-          {data.map((item, index) => {
+          {data && query && data.map((item, index) => {
               return(
                   <Study studyName={item[0]} key={index} />
               )
           })}
+          {!query && "Søk etter ønsket studie"}
       </div>
       </div>
 
@@ -61,7 +65,7 @@ const Study = (props:studyProps) => {
 
     const handleClick = () => {
         if(!isVisible){
-            fetch(`https://poenggrenser.theodorc.no/points?study=${props.studyName}`)
+            fetch(`${URL}/points?study=${props.studyName}`)
                 .then(res => res.json())
                 .then(res => setData(res.data))
         }
