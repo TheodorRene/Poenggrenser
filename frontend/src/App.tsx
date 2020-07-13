@@ -19,7 +19,7 @@ const FuzzySearch = () => {
 
     useEffect( () => {
         if(hasMounted) {
-            fetch(`http://localhost:5000/search?q=${query}`)
+            fetch(`https://poenggrenser.theodorc.no/search?q=${query}`)
                 .then(res => res.json())
                 .then(res => setData(res.data))
                 .catch((e) => console.log(e))
@@ -61,7 +61,7 @@ const Study = (props:studyProps) => {
 
     const handleClick = () => {
         if(!isVisible){
-            fetch(`http://localhost:5000/points?study=${props.studyName}`)
+            fetch(`https://poenggrenser.theodorc.no/points?study=${props.studyName}`)
                 .then(res => res.json())
                 .then(res => setData(res.data))
         }
