@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 from processing import PoengProcessing
 from flask_cors import CORS
 
-app = Flask(__name__)
+application = app = Flask(__name__)
 CORS(app)
 
 processing = PoengProcessing("data.csv")

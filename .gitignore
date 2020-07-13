@@ -10,8 +10,9 @@
 
 # production
 /frontend/build
-/backend/__pychache__
+/backend/__pychache__/*
 /backend/venv
+*.pyc
 
 # misc
 .DS_Store
