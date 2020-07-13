@@ -2,7 +2,7 @@
 Enkel måte å sjekke hva poengrensene er. Kun for 2019
 
 ## Hensikt
-Hensikten med dette pro
+Hensikten med dette prosjektet var å se hva jeg kunnne gjøre med begrenset tid. Nettsiden har en del bugs men skal funke ganske greit til bruket. 
 
 ## Arkitektur
 * Flask applikasjon deployet til Elastic Beanstalk med Application Load Balancer for HTTPS
