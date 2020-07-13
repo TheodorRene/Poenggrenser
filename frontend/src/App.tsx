@@ -11,8 +11,8 @@ function App() {
     </div>
   );
 }
-//const URL ="https://poenggrenser.theodorc.no"
-const URL ="http://localhost:5000"
+const URL ="https://poenggrenser.theodorc.no"
+//const URL ="http://localhost:5000"
 
 const FuzzySearch = () => {
     const [query, setQuery] = useState("")
