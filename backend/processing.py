@@ -15,7 +15,7 @@ class PoengProcessing:
         return df.loc[(df['Studienavn'] == study) & (df['Measure Names'] == 'Poenggrense') & (df['KVOTETILHKODE'].isin(('ORD','ORDF')))]
 
     def get_poengrenser(self, study: str):
-        return self.get_full_poengrenser(study)[['Studienavn', 'Studiested', 'Measure Values', 'KVOTETILHKODE']]
+        return self.get_full_poengrenser(study)[['Studienavn', 'Studiested', 'Measure Values', 'KVOTETILHKODE', 'TID']]
 
     def get_locations_from_study(self, study:str):
         return self.get_full_poengrenser(study)[['Studiested']].drop_duplicates().values

@@ -11,8 +11,8 @@ function App() {
     </div>
   );
 }
-const URL ="https://poenggrenser.theodorc.no"
-//const URL ="http://localhost:5000"
+//const URL ="https://poenggrenser.theodorc.no"
+const URL ="http://localhost:5000"
 
 const FuzzySearch = () => {
     const [query, setQuery] = useState("")
@@ -80,22 +80,33 @@ const Study = (props:studyProps) => {
         color: '#444',
     }
 
+    const pointStyle ={
+        cursor: 'pointer',
+        color: '#444',
+    }
+
 
 
     return (
         <div style={mainStudyStyle} key={props.key} onClick={handleClick}>
             {props.studyName} {!isVisible && '◄'} {isVisible &&  '▼'}
             {isVisible && data.map((item, index) => {
+                let [studie, sted, poeng, type, tid] = item
+                // @ts-ignore
+
+                let semester = tid.slice(-1)[0]
                 if(item[2] === -1.0){
+                    // @ts-ignore
                     return(
                         <div key={index} style={studyStyle}>
-                            {item[0]} {item[1]} N/A {item[3]}
+                            {studie} {sted} N/A {type} {semester}
                         </div>
                     )
                 }
+                // @ts-ignore
                 return(
                     <div key={index} style={studyStyle}>
-                        {item[0]} {item[1]} {item[2]} {item[3]}
+                        {studie} {sted} <span style={pointStyle}>{poeng}</span> {type} {semester}
                     </div>
                 )
             })}
