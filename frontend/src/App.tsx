@@ -11,7 +11,7 @@ function App() {
     </div>
   );
 }
-{}
+
 const FuzzySearch = () => {
     const [query, setQuery] = useState("")
     const [data, setData] = useState([["Søk etter ønsket studie"]])
@@ -28,7 +28,7 @@ const FuzzySearch = () => {
             setHasMounted(true)
         }
 
-    },[query])
+    },[query, hasMounted])
 
     const handleChange = (e: { target: { value: React.SetStateAction<string>; }; }) => {
        setQuery(e.target.value)
@@ -51,7 +51,7 @@ const FuzzySearch = () => {
 
 type studyProps = {
     studyName: String,
-    key: number
+    key: number,
 }
 
 const Study = (props:studyProps) => {
@@ -80,7 +80,7 @@ const Study = (props:studyProps) => {
 
     return (
         <div style={mainStudyStyle} key={props.key} onClick={handleClick}>
-            {props.studyName} {!isVisible && '◄'} {isVisible && '▼'}
+            {props.studyName} {!isVisible && '◄'} {isVisible &&  '▼'}
             {isVisible && data.map((item, index) => {
                 if(item[2] === -1.0){
                     return(
