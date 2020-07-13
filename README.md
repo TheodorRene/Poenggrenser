@@ -1,6 +1,15 @@
 # [Poenggrenser](https://poenggrenser.xyz)
 Enkel måte å sjekke hva poengrensene er. Kun for 2019
 
+## Hensikt
+Hensikten med dette pro
+
+## Arkitektur
+* Flask applikasjon deployet til Elastic Beanstalk med Application Load Balancer for HTTPS
+* Typescript/React deployet til Netlify 
+* Bruker pandas for å gjøre det enklere å jobbe med rader og kolonner, fuzzywuzzy for fuzzy søk og som nevnt Flask for å gjøre det til en webapplikasjon
+
+
 ## One Day Project
 
 [poengrenser.xyz](https://poenggrenser.xyz)
