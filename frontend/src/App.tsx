@@ -11,7 +11,7 @@ function App() {
     </div>
   );
 }
-const URL ="https://poengrenser.theodorc.no"
+const URL ="https://poenggrenser.theodorc.no"
 //const URL ="http://localhost:5000"
 
 const FuzzySearch = () => {
