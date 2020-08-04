@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <body>
-      <h1> Poengrenser 2019 </h1>
+      <h1> Poengrenser 2020 </h1>
       <FuzzySearch/>
       </body>
     </div>
@@ -91,22 +91,20 @@ const Study = (props:studyProps) => {
         <div style={mainStudyStyle} key={props.key} onClick={handleClick}>
             {props.studyName} {!isVisible && '◄'} {isVisible &&  '▼'}
             {isVisible && data.map((item, index) => {
-                let [studie, sted, poeng, type, tid] = item
-                // @ts-ignore
+                let [studie, sted, poeng, type ] = item
 
-                let semester = tid.slice(-1)[0]
                 if(item[2] === -1.0){
                     // @ts-ignore
                     return(
                         <div key={index} style={studyStyle}>
-                            {studie} {sted} N/A {type} {semester}
+                            {studie} {sted} N/A {type}
                         </div>
                     )
                 }
                 // @ts-ignore
                 return(
                     <div key={index} style={studyStyle}>
-                        {studie} {sted} <span style={pointStyle}>{poeng}</span> {type} {semester}
+                        {studie} {sted} <span style={pointStyle}>{poeng}</span> {type} 
                     </div>
                 )
             })}

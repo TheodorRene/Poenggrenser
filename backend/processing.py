@@ -12,10 +12,10 @@ class PoengProcessing:
 
     def get_full_poengrenser(self,study: str):
         df = self.df
-        return df.loc[(df['Studienavn'] == study) & (df['Measure Names'] == 'Poenggrense') & (df['KVOTETILHKODE'].isin(('ORD','ORDF')))]
+        return df.loc[(df['Studienavn'] == study) & (df['Opptaksfase'] == 'Hovedopptak') & (df['Kvote'].isin(('ORD','ORDF'))) & (df['År']==2020)]
 
     def get_poengrenser(self, study: str):
-        return self.get_full_poengrenser(study)[['Studienavn', 'Studiested', 'Measure Values', 'KVOTETILHKODE', 'TID']]
+        return self.get_full_poengrenser(study)[['Studienavn', 'Studiested', 'Poenggrense', 'Kvote']]
 
     def get_locations_from_study(self, study:str):
         return self.get_full_poengrenser(study)[['Studiested']].drop_duplicates().values
