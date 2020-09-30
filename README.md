@@ -11,6 +11,7 @@ Hensikten med dette prosjektet var å se hva jeg kunnne gjøre med begrenset tid
 
 
 ## One Day Project
+For øyeblikket er tjenesten nede da AWS kostnadene ble litt for høye for en så enkel applikasjon
 
 [poengrenser.xyz](https://poenggrenser.xyz)
 
