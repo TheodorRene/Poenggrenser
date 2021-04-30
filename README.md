@@ -11,7 +11,7 @@ Hensikten med dette prosjektet var å se hva jeg kunnne gjøre med begrenset tid
 
 
 ## One Day Project
-For øyeblikket er tjenesten nede da AWS kostnadene ble litt for høye for en så enkel applikasjon
+For øyeblikket er tjenesten hostet på gratisplanen til Heroku. Derfor går backenden i dvale og forespørsler kan ofte ta opp til 30 sekunder hvis den ikke har møtt noe trafikk på en stund. 
 
 [poengrenser.xyz](https://poenggrenser.xyz)
 
