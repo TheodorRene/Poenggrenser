@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <body>
-      <h1> Poengrenser 2020 </h1>
+      <h1> Poenggrenser 2021 </h1>
       <FuzzySearch/>
       </body>
     </div>
