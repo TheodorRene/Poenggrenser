@@ -12,7 +12,7 @@ class PoengProcessing:
 
     def get_full_poengrenser(self,study: str):
         df = self.df
-        return df.loc[(df['Studienavn'] == study) & (df['Opptaksfase'] == 'Hovedopptak') & (df['Kvote'].isin(('ORD','ORDF'))) & (df['År']==2020)]
+        return df.loc[(df['Studienavn'] == study) & (df['Opptaksrunde'] == 'Hovedopptak') & (df['Kvote'].isin(('ORD','ORDF'))) & (df['År']==2021)]
 
     def get_poengrenser(self, study: str):
         return self.get_full_poengrenser(study)[['Studienavn', 'Studiested', 'Poenggrense', 'Kvote']]

@@ -5,7 +5,7 @@ from flask_cors import CORS
 application = app = Flask(__name__)
 CORS(app)
 
-processing = PoengProcessing("data20.csv")
+processing = PoengProcessing("data21.csv")
 
 @app.route('/search')
 def fuzzy_query():
