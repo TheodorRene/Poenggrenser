@@ -1,0 +1,13 @@
+.main {
+    text-align: center;
+}
+
+#answers{
+    text-align:center;
+}
+.studyBtn{
+    display:block;
+    width: 100px; 
+    margin: 0 auto; 
+}
+ 
