@@ -1,13 +1,28 @@
 .main {
     text-align: center;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+#inputfield {
+    width:50%;
+    
+}
+button {
+    width: 40px;
 }
 
 #answers{
     text-align:center;
 }
-.studyBtn{
-    display:block;
-    width: 100px; 
-    margin: 0 auto; 
-}
  
+
+.study-wrapper {
+    display:flex;
+    flex-direction:column;
+}
+
+.button-title{
+    display:flex;
+}
